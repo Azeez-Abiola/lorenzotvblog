@@ -378,7 +378,7 @@ section {
     padding: 13px 30px;
     color: #fff;
     font-size: 18px;
-    background: linear-gradient(145deg,red 0%,red 100%);
+    background: linear-gradient(145deg,rgb(176, 7, 7) 0%,rgb(176, 7, 7) 100%);
     border: none;
     position: relative;
     overflow: hidden;
@@ -2746,7 +2746,7 @@ audio, canvas, progress, video {
 /* Home Page 4 End Css */
 /* Common Page-Header Section STARTS Here */
 .page-header {
-    background-image: url(../image/bg/bg-page-header.jpg);
+    background-image: url(/assets/image/bg4.jpg);
     width: 100%;
     display: flex;
     align-items: center;
