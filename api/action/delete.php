@@ -27,8 +27,6 @@ if(!isset($_GET['api_key']))
 
         $delete_id = $_GET['delete_id'];
 
-        $response['id'] = $delete_id;
-
         $stmt = $conn->prepare("DELETE FROM blog WHERE id = ?");
 
         $stmt->bind_param("i", $delete_id);
