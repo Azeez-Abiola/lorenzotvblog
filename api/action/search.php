@@ -13,7 +13,7 @@ if(!isset($_GET['api_key']) || !isset($_GET['search_word']))
 }else 
 
 {
-    $api_key = $_ENV['API_KEY'];
+    $api_key = API_KEY;
     
   if ($_GET['api_key'] !== $api_key){
 
@@ -42,7 +42,7 @@ if(!isset($_GET['api_key']) || !isset($_GET['search_word']))
                 }
 
                 $response['error'] = false;
-                $response['blog post'] = $search_result;
+                $response['blog-post'] = $search_result;
                 $response['message'] = 'Matching results returned successfuly!';
                 
             }else {

@@ -14,7 +14,7 @@ if(!isset($_GET['api_key']) || !isset($_GET['id']))
 }else 
 
 {
-    $api_key = $_ENV['API_KEY'];
+    $api_key = API_KEY;
 
   if ($_GET['api_key'] !== $api_key) {
 
@@ -41,7 +41,7 @@ if(!isset($_GET['api_key']) || !isset($_GET['id']))
             
                 $all_blog_post[] = $row;
                 $response['error'] = false;
-                $response['blog post'] = $all_blog_post;
+                $response['blog-post'] = $all_blog_post;
                 $response['message'] = 'Blog posts returned successfully';
             }
         }else {

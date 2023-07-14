@@ -7,8 +7,3 @@ header("Access-Control-Allow-Methods: *");
 
 require('../config/conn.php');
 
-require '../vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createMutable(__DIR__ . '../');
-$dotenv->load();
-

@@ -1,0 +1,11 @@
+<?php
+
+$conn = mysqli_connect("localhost","muhammad_adeleke","okikiola(m)","muhammad_lorenzodb");
+
+define("API_KEY", "b15d41e6c3a4f5lorenzotv3a0b7a3a2");
+
+if(!$conn){
+     mysqli_connect_error();
+}
+
+?>
