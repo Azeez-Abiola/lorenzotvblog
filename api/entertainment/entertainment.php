@@ -4,7 +4,7 @@ require('../header.php');
 
 $response = array();
 
-//blog_category_id  = movies
+//blog_category_id  = entertainment
 
 if(!isset($_GET['api_key'])) 
 {
@@ -14,7 +14,7 @@ if(!isset($_GET['api_key']))
 }else 
 
 {
-    $api_key = $_ENV['API_KEY'];
+    $api_key = API_KEY;
 
   if ($_GET['api_key'] !== $api_key) {
 
@@ -24,21 +24,22 @@ if(!isset($_GET['api_key']))
 
   }else {
 
-    $stmt = $conn->prepare("SELECT * FROM blog WHERE blog_category_id = 4");
+    $stmt = $conn->prepare("SELECT * FROM blog WHERE blog_category_id = 3");
 
     if ($stmt) {
         $stmt->execute();
+        
         $result = $stmt->get_result();
 
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            $row['blog category'] = 'Movies';
+            $row['blog category'] = 'Entertainment';
             
             $blog_post[] = $row;
 
         }
 
         $response['error'] = false;
-        $response['blog post'] = $blog_post;
+        $response['blog-post'] = $blog_post;
         $response['message'] = 'blog post returned successfully';
 
 

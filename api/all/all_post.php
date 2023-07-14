@@ -13,7 +13,7 @@ if(!isset($_GET['api_key']))
 }else 
 
 {
-    $api_key = $_ENV['API_KEY'];
+    $api_key = API_KEY;
 
   if ($_GET['api_key'] !== $api_key) {
 
@@ -37,7 +37,7 @@ if(!isset($_GET['api_key']))
         }
 
         $response['error'] = false;
-        $response['blog post'] = $all_blog_post;
+        $response['blog-post'] = $all_blog_post;
         $response['message'] = 'all blog post returned successfully';
         $stmt->close();
     } else {

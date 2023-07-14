@@ -4,17 +4,18 @@ require '../header.php';
 
 $response = array();
 
-if(!isset($_GET['api_key'])) 
+if(!isset($_GET['api_key']) || !isset($_GET['search_word'])) 
 {
     //erorr
     $response['error'] = true;
-    $response['message'] = 'provide an api key';
+    $response['message'] = 'provide an api key and a search keyword';
+
 }else 
 
 {
-    $api_key = $_ENV['API_KEY'];
+    $api_key = API_KEY;
     
-  if ($_GET['api_key'] !== $api_key) {
+  if ($_GET['api_key'] !== $api_key){
 
       //erorr
       $response['error'] = true;
@@ -40,8 +41,8 @@ if(!isset($_GET['api_key']))
                     $search_result[] = $row;
                 }
 
-                $response['error'] = true;
-                $response['blog post'] = $search_result;
+                $response['error'] = false;
+                $response['blog-post'] = $search_result;
                 $response['message'] = 'Matching results returned successfuly!';
                 
             }else {
@@ -64,7 +65,6 @@ if(!isset($_GET['api_key']))
  }
 
 }
-
 
 echo json_encode($response);
 ?>
